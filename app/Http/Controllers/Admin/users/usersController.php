@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Product;
+namespace App\Http\Controllers\Admin\users;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
-{   
+class usersController extends Controller
+{
     public function index(){
-         echo('^^ !');
+        echo('^^ !');
     }
     public function add(){
         echo('^^ !');
@@ -18,5 +18,5 @@ class ProductController extends Controller
     }
     public function delete(){
         echo('^^ !');
-   }
+    }
 }
