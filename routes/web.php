@@ -49,10 +49,11 @@ Route::prefix('admin')->group(function () {
          * Admin // Product
          */
 
-        Route::get('index', 'Admin\Product\ProductController@index')->name('admin.product.index');
-        Route::post('add', 'Admin\Product\ProductController@add')->name('admin.product.add');
-        Route::post('edit', 'Admin\Product\ProductController@edit')->name('admin.product.edit');
-        Route::get('delete', 'Admin\Product\ProductController@delete')->name('admin.product.delete');  
+        Route::get('/', 'Admin\Product\ProductController@index')->name('admin.product.index');
+        Route::post('/', 'Admin\Product\ProductController@add')->name('admin.product.add');
+        Route::get('/{id}/edit', 'Admin\Product\ProductController@edit')->name('admin.product.edit');
+        Route::post('/{id}', 'Admin\Product\ProductController@update')->name('admin.product.update');
+        Route::get('/{id}', 'Admin\Product\ProductController@delete')->name('admin.product.delete');
     });  
 });
 

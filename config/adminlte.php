@@ -222,7 +222,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Danh sách sản phẩm',
-                    'url'  => '#',
+                    'url'  => 'admin/product',
                     'icon_color' => 'red',
                 ],
                 [
