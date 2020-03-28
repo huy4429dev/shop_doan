@@ -28,10 +28,12 @@ Route::prefix('admin')->group(function () {
         /**
          * Admin //  User
          */
-        Route::get('index', 'Admin\users\usersController@index')->name('admin.users.index');
+        Route::get('/', 'Admin\users\usersController@index')->name('admin.users.index');
+        Route::get('goadd', 'Admin\users\usersController@goadd')->name('admin.users.goadd');
         Route::post('add', 'Admin\users\usersController@add')->name('admin.users.add');
-        Route::post('edit', 'Admin\users\usersController@edit')->name('admin.users.edit');
-        Route::get('delete', 'Admin\users\usersController@delete')->name('admin.users.delete');
+        Route::get('goedit/{id}', 'Admin\users\usersController@goedit')->name('admin.users.goedit');
+        Route::post('edit/{id}', 'Admin\users\usersController@edit')->name('admin.users.edit');
+        Route::get('delete/{id}', 'Admin\users\usersController@delete')->name('admin.users.delete');
     });
 
     Route::prefix('news')->group(function () {
@@ -39,8 +41,10 @@ Route::prefix('admin')->group(function () {
          * Admin // Tin tức
          */
 
-        Route::get('index', 'Admin\news\newsController@index')->name('admin.news.index');
+        Route::get('/', 'Admin\news\newsController@index')->name('admin.news.index');
+        Route::get('goadd', 'Admin\news\newsController@goadd')->name('admin.news.goadd');
         Route::post('add', 'Admin\news\newsController@add')->name('admin.news.add');
+        Route::get('goedit/{id}', 'Admin\users\newsController@goedit')->name('admin.news.goedit');
         Route::post('edit', 'Admin\news\newsController@edit')->name('admin.news.edit');
         Route::get('delete', 'Admin\news\newsController@delete')->name('admin.news.delete');
     });
