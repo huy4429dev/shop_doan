@@ -43,17 +43,17 @@
     <tr>
       <th scope="row">{{$key}}</th>
       <td>
-        <img src="{{ URL::to('/') }}/img/{{$new->hinh_anh}}" width="50" alt="Image"/>
+        <img src="{{ URL::to('/') }}/img/{{$new->hinhanh}}" width="50" alt="Image"/>
       </td>
-      <td>{{$new->doan_trich}}</td>      
-      <td>{{$new->noi_dung}}</td>
-      <td>{{$new->so_binh_luan}}</td> 
-      <td>{{$new->so_luot_thich}}</td>   
-      <td>{{$new->danh_muc_bai_viet_id}}</td>    
-      <td>{{$new->user_id}}</td>      
+      <td>{{$new->doantrich}}</td>      
+      <td>{{$new->noidung}}</td>
+      <td>{{$new->sobinhluan}}</td> 
+      <td>{{$new->soluotthich}}</td>   
+      <td>{{$new->danhmucbaivietid}}</td>    
+      <td>{{$new->userid}}</td>      
       <td>
-        <a href="{{route('admin.news.goedit',$new->id)}}" style="color:#fff;"  class="btn btn-info">Cập nhật</a>
-        <a href="{{route('admin.news.delete',$new->id)}}" class="btn btn-danger" style="color:#fff;">Xóa</a>
+        <a href="{{route('admin.news.goedit',$new->id_baiviet)}}" style="color:#fff;"  class="btn btn-info">Cập nhật</a>
+        <a href="{{route('admin.news.delete',$new->id_baiviet)}}" class="btn btn-danger" style="color:#fff;">Xóa</a>
       </td>
     </tr>
     @endforeach
