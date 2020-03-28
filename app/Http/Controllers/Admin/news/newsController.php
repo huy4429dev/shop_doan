@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class newsController extends Controller
 {
     public function index(){
-        echo('^^ !');
+        $news = DB::table('bai_viet')->get();     
+        return view('admin.news.index', compact('news'));
     }
     public function add(){
         echo('^^ !');

@@ -9,6 +9,7 @@ use DB;
 
 class usersController extends Controller
 {
+    // public $timestamps = true;
     public function index(){
         $users = DB::table('users')->get();
         // dd($users);
@@ -19,8 +20,23 @@ class usersController extends Controller
     }
     public function add(Request $request){        
         // return $request;
+        // if ($request->hasFile('avatar')){
+            $file = $request->avatar;
+            $file->move('img', $file->getClientOriginalName());
+
+            // dd($file);
+        // }        
+       
+        // $file->move('img', $file->getClientOriginalName());
         DB::table('users')->insert(
-            ['tai_khoan' => $request->username, 'mat_khau' => $request->password]
+            [
+                'tai_khoan' => $request->username,
+                'mat_khau' => $request->password,
+                'anh_dai_dien' => $file->getClientOriginalName(),
+                'so_dien_thoai' => $request->Phone,
+                'mo_ta'=> $request->mota,
+                'role'=>0,
+            ]
         );
         return redirect()->back()->with('message', 'Thêm mới thành công');
     }
@@ -29,8 +45,17 @@ class usersController extends Controller
         return view('admin.users.edit',compact('users'));
     }
     public function edit(Request $request,$id){
+        $file = $request->avatar;
+        $file->move('img', $file->getClientOriginalName());
         DB::table('users')->where('id',$id)->update(
-            ['tai_khoan' => $request->username, 'mat_khau' => $request->password]
+            [
+                'tai_khoan' => $request->username,
+                 'mat_khau' => $request->password,
+                 'anh_dai_dien' => $file->getClientOriginalName(),
+                'so_dien_thoai' => $request->Phone,
+                'mo_ta'=> $request->mota,
+                'role'=>0,
+            ]
         );
         return redirect()->back()->with('message', 'Cập nhật thành công');
     }

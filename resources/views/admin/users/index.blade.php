@@ -32,21 +32,22 @@
       <th scope="col">Mật khẩu</th>
       <th scope="col">Avatar</th>
       <th scope="col">Số điện thoại</th>
-      <th scope="col">Mô tả</th>
-      <th scope="col">Ngày cập nhật</th>
+      <th scope="col">Mô tả</th>      
       <th scope="col">Thao tác</th>
     </tr>
   </thead>
   <tbody>
-  @foreach($users as $user)
+  @foreach($users as $key=>$user)
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{$key}}</th>
       <td>{{$user->tai_khoan}}</td>
       <td>{{$user->mat_khau}}</td>
-      <td>{{$user->anh_dai_dien}}</td>
+      <td>
+        <!-- {{$user->anh_dai_dien}} -->
+        <img src="{{ URL::to('/') }}/img/{{$user->anh_dai_dien}}" width="50" alt="Image"/>
+      </td>
       <td>{{$user->so_dien_thoai}}</td>
-      <td>{{$user->mo_ta}}</td>
-      <td>{{$user->create_at}}</td>
+      <td>{{$user->mo_ta}}</td>      
       <td>
         <a href="{{route('admin.users.goedit',$user->id)}}" style="color:#fff;"  class="btn btn-info">Cập nhật</a>
         <a href="{{route('admin.users.delete',$user->id)}}" class="btn btn-danger" style="color:#fff;">Xóa</a>

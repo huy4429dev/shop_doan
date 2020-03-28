@@ -20,7 +20,7 @@
 </div>
 @endif
 @foreach($users as $user)
-<form method="post" action="{{route('admin.users.edit',$user->id)}}" accept-charset="UTF-8">
+<form method="post" action="{{route('admin.users.edit',$user->id)}}" enctype="multipart/form-data" accept-charset="UTF-8">
     {{ csrf_field()}}
   <div class="form-group">
     <label for="exampleInputEmail1">Tên tài khoản:</label>
@@ -30,6 +30,18 @@
     <label for="exampleInputPassword1">Mật khẩu:</label>
     <input type="password" name="password" value="{{$user->mat_khau}}" class="form-control">
   </div>
+  <div class="form-group">
+        <label for="exampleInputEmail1">Avatar:</label>
+        <input type="file" name="avatar"  class="form-control" required="true" value="{{$user->anh_dai_dien}}">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Phone:</label>
+        <input type="text" name="Phone" class="form-control" value="{{$user->so_dien_thoai}}">    
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Mô tả:</label>
+        <input type="text" name="mota" class="form-control" value="{{$user->mo_ta}}">    
+    </div>        
   <button type="submit" class="btn btn-primary">Cập nhật</button>
 </form>
 @endforeach
