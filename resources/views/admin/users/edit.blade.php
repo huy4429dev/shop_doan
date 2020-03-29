@@ -32,7 +32,7 @@
   </div>
   <div class="form-group">
         <label for="exampleInputEmail1">Avatar:</label>
-        <input type="file" name="avatar"  class="form-control" required="true" value="{{$user->anh_dai_dien}}">
+        <input type="file" name="avatar"  class="form-control" value="{{$user->anh_dai_dien}}">
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Phone:</label>

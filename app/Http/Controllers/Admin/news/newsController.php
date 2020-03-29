@@ -47,7 +47,8 @@ class newsController extends Controller
     }
     public function edit(Request $request,$id){        
         $file = $request->hinhanh;
-        dd($file);
+        // dd($file);
+        if($request->hasFile('hinhanh')){
         $file->move('img', $file->getClientOriginalName());
         DB::table('bai_viet')->where('id',$id)->update(
             [
@@ -56,7 +57,15 @@ class newsController extends Controller
                 'noi_dung' => $request->noidung,
                 'danh_muc_bai_viet_id' => $request->danhmucbaiviet,                                
             ]
-        );
+        );}else{
+            DB::table('bai_viet')->where('id',$id)->update(
+                [                    
+                    'doan_trich' => $request->doantrich,
+                    'noi_dung' => $request->noidung,
+                    'danh_muc_bai_viet_id' => $request->danhmucbaiviet,                                
+                ]
+            );
+        }
         return redirect()->back()->with('message', 'Cập nhật thành công');
     }
     public function delete($id){

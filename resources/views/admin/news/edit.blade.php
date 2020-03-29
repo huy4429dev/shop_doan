@@ -38,7 +38,7 @@
         </div>    
         <div class="form-group">
             <label for="exampleInputEmail1">Hình ảnh:</label>
-            <input type="file" name="hinhanh" class="form-control" accept=".jpg, .jpeg, .png" required="true">    
+            <input type="file" name="hinhanh" class="form-control" accept=".jpg, .jpeg, .png" value="{{$news[0]->hinh_anh}}">    
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Tiêu đề:</label>
