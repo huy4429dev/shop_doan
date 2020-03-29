@@ -44,9 +44,12 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'Admin\news\newsController@index')->name('admin.news.index');
         Route::get('goadd', 'Admin\news\newsController@goadd')->name('admin.news.goadd');
         Route::post('add', 'Admin\news\newsController@add')->name('admin.news.add');
-        Route::get('goedit/{id}', 'Admin\users\newsController@goedit')->name('admin.news.goedit');
-        Route::post('edit', 'Admin\news\newsController@edit')->name('admin.news.edit');
-        Route::get('delete', 'Admin\news\newsController@delete')->name('admin.news.delete');
+        Route::get('goedit/{id}', 'Admin\news\newsController@goedit')->name('admin.news.goedit');
+        Route::post('edit/{id}', 'Admin\news\newsController@edit')->name('admin.news.edit');
+        Route::get('delete/{id}', 'Admin\news\newsController@delete')->name('admin.news.delete');
+        Route::get('comment', 'Admin\news\newsController@comment')->name('admin.news.comment');
+        Route::get('comment/delete/{id}', 'Admin\news\newsController@comment_delete')->name('admin.news.comment.delete');
+        Route::post('comment/status', 'Admin\news\newsController@comment_status')->name('admin.comment.status');
     });
     Route::prefix('product')->group(function () {
         /**

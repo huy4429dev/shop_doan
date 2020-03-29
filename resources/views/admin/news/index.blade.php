@@ -33,8 +33,7 @@
       <th scope="col">Nội dung</th>
       <th scope="col">Số bình luận</th>
       <th scope="col">Số lượt thích</th>   
-      <th scope="col">Danh mục</th>
-      <th scope="col">Tác giả</th>       
+      <th scope="col">Danh mục</th>    
       <th scope="col">Thao tác</th>
     </tr>
   </thead>
@@ -49,8 +48,7 @@
       <td>{{$new->noidung}}</td>
       <td>{{$new->sobinhluan}}</td> 
       <td>{{$new->soluotthich}}</td>   
-      <td>{{$new->danhmucbaivietid}}</td>    
-      <td>{{$new->userid}}</td>      
+      <td>{{$new->danhmucbaivietid}}</td>       
       <td>
         <a href="{{route('admin.news.goedit',$new->id_baiviet)}}" style="color:#fff;"  class="btn btn-info">Cập nhật</a>
         <a href="{{route('admin.news.delete',$new->id_baiviet)}}" class="btn btn-danger" style="color:#fff;">Xóa</a>

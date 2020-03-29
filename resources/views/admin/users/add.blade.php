@@ -26,11 +26,11 @@
             {{ csrf_field()}}  
         <div class="form-group">
             <label for="exampleInputEmail1">Tên tài khoản:</label>
-            <input type="text" name="username" class="form-control">    
+            <input type="text" name="username" class="form-control" required="true">    
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Mật khẩu:</label>
-            <input type="password" name="password" class="form-control">
+            <input type="password" name="password" class="form-control" required="true">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Avatar:</label>
@@ -38,11 +38,11 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Phone:</label>
-            <input type="text" name="Phone" class="form-control">    
+            <input type="text" name="Phone" class="form-control" required="true">    
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Mô tả:</label>
-            <input type="text" name="mota" class="form-control">    
+            <input type="text" name="mota" class="form-control" required="true">    
         </div>
         <button type="submit" class="btn btn-primary">Thêm</button>
         </form>

@@ -24,11 +24,11 @@
     {{ csrf_field()}}
   <div class="form-group">
     <label for="exampleInputEmail1">Tên tài khoản:</label>
-    <input type="text" name="username" value="{{$user->tai_khoan}}" class="form-control">    
+    <input type="text" name="username" value="{{$user->tai_khoan}}" class="form-control" required="true">    
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Mật khẩu:</label>
-    <input type="password" name="password" value="{{$user->mat_khau}}" class="form-control">
+    <input type="password" name="password" value="{{$user->mat_khau}}" class="form-control" required="true">
   </div>
   <div class="form-group">
         <label for="exampleInputEmail1">Avatar:</label>
@@ -36,11 +36,11 @@
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Phone:</label>
-        <input type="text" name="Phone" class="form-control" value="{{$user->so_dien_thoai}}">    
+        <input type="text" name="Phone" class="form-control" value="{{$user->so_dien_thoai}}" required="true">    
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Mô tả:</label>
-        <input type="text" name="mota" class="form-control" value="{{$user->mo_ta}}">    
+        <input type="text" name="mota" class="form-control" value="{{$user->mo_ta}}" required="true">    
     </div>        
   <button type="submit" class="btn btn-primary">Cập nhật</button>
 </form>

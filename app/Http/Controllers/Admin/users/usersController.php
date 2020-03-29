@@ -19,15 +19,8 @@ class usersController extends Controller
         return view('admin.users.add');
     }
     public function add(Request $request){        
-        // return $request;
-        // if ($request->hasFile('avatar')){
-            $file = $request->avatar;
-            $file->move('img', $file->getClientOriginalName());
-
-            // dd($file);
-        // }        
-       
-        // $file->move('img', $file->getClientOriginalName());
+        $file = $request->avatar;
+        $file->move('img', $file->getClientOriginalName());
         DB::table('users')->insert(
             [
                 'tai_khoan' => $request->username,
