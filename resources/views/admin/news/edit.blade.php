@@ -25,7 +25,7 @@
     <form method="post" action="{{route('admin.news.edit',$news[0]->id)}}" enctype="multipart/form-data" accept-charset="UTF-8">
             {{ csrf_field()}}     
             <div class="form-group">
-            <label for="exampleInputEmail1">Danh mục bài viết:</label>
+            <label for="exampleInputEmail1">Danh mục bài viết:</label><br>
             <select name="danhmucbaiviet">
                 @foreach($danhmuc as $dm)
                 @if($dm->id == $news[0]->danh_muc_bai_viet_id)
