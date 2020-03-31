@@ -56,11 +56,25 @@ Route::prefix('admin')->group(function () {
          * Admin // Product
          */
 
-        Route::get('index', 'Admin\Product\ProductController@index')->name('admin.product.index');
-        Route::post('add', 'Admin\Product\ProductController@add')->name('admin.product.add');
-        Route::post('edit', 'Admin\Product\ProductController@edit')->name('admin.product.edit');
-        Route::get('delete', 'Admin\Product\ProductController@delete')->name('admin.product.delete');  
-    });  
+        Route::get('/{id}/cat', 'Admin\Product\ProductController@index')->name('admin.product.index');
+        Route::get('/{id}/create', 'Admin\Product\ProductController@create')->name('admin.product.create');
+        Route::post('/', 'Admin\Product\ProductController@store')->name('admin.product.store');
+        Route::get('/{id}/edit', 'Admin\Product\ProductController@edit')->name('admin.product.edit');
+        Route::post('/{id}/edit', 'Admin\Product\ProductController@update')->name('admin.product.update');
+        Route::get('/{id}/delete', 'Admin\Product\ProductController@delete')->name('admin.product.delete');
+    });
+    Route::prefix('cat')->group(function () {
+        /**
+         * Admin // Product
+         */
+
+        Route::get('/', 'Admin\Category\CategoryController@index')->name('admin.cat.index');
+        Route::get('/create', 'Admin\Category\CategoryController@create')->name('admin.cat.create');
+        Route::post('/', 'Admin\Category\CategoryController@store')->name('admin.cat.store');
+        Route::get('/{id}/edit', 'Admin\Category\CategoryController@edit')->name('admin.cat.edit');
+        Route::post('/{id}/edit', 'Admin\Category\CategoryController@update')->name('admin.cat.update');
+        Route::get('/{id}/delete', 'Admin\Category\CategoryController@delete')->name('admin.cat.delete');
+    });
 });
 
 /**
