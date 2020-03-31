@@ -199,6 +199,41 @@ return [
             'can'  => 'manage-blog',
         ],
         [
+            'text'        => 'pages',
+            'url'         => 'admin/pages',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 4,
+            'label_color' => 'success',
+        ],
+        ['header' => 'account_settings'],
+        [
+            'text' => 'profile',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Quản lý Users',
+            'url'  => 'admin/users',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Quản lý Bài viết',
+            'url'  => 'admin/news',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Quản lý Bình luận',
+            'url'  => 'admin/news/comment',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'change_password',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text'    => 'multilevel',
+            'icon'    => 'fas fa-fw fa-share',
             'text'    => 'Quản lý sản phẩm',
             'icon'    => 'fa fa-shopping-cart',
             'submenu' => [
