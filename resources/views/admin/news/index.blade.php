@@ -1,5 +1,6 @@
-@extends('adminlte::page')
 
+@extends('layouts.admin')
+@section('main')
 @section('title', 'Admin || Quản lý users')
 
 @section('content_header')
@@ -24,17 +25,18 @@
     </div>    
 </div>
 @endif
-<table class="table">
+<div class="callout-top callout-top-danger table-responsive">
+<table id="news" align="center" width="100%" class="text-center table table-hover table-striped table-bordered">
   <thead>
     <tr>
-      <th scope="col">STT</th>
-      <th scope="col">Hình ảnh</th>
-      <th scope="col">Đoạn trích</th>
-      <th scope="col">Nội dung</th>
-      <th scope="col">Số bình luận</th>
-      <th scope="col">Số lượt thích</th>   
-      <th scope="col">Danh mục</th>    
-      <th scope="col">Thao tác</th>
+      <th>STT</th>
+      <th>Hình ảnh</th>
+      <th>Đoạn trích</th>
+      <th>Nội dung</th>
+      <th>Số bình luận</th>
+      <th>Số lượt thích</th>   
+      <th>Danh mục</th>    
+      <th>Thao tác</th>
     </tr>
   </thead>
   <tbody>
@@ -57,13 +59,7 @@
     @endforeach
   </tbody>
 </table>
+</div>
+@stop
 @stop
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-    <script type="text/javascript" language="javascript" src="/ckeditor/ckeditor.js"></script>
-@stop

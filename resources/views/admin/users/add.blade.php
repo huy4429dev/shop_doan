@@ -1,5 +1,6 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 
+@section('main')
 @section('title', 'Admin || Thêm mới users')
 
 @section('content_header')
@@ -21,7 +22,7 @@
 @endif
 
 <div class="row">    
-    <div class="col-md-4">
+    <div class="col-md-6 callout-top callout-top-danger pt-0">
     <form method="post" action="{{route('admin.users.add')}}" enctype="multipart/form-data" accept-charset="UTF-8">
             {{ csrf_field()}}  
         <div class="form-group">
@@ -51,12 +52,4 @@
 
 
 @stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-    <script type="text/javascript" language="javascript" src="/ckeditor/ckeditor.js"></script>
 @stop
