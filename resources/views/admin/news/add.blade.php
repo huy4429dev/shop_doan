@@ -1,10 +1,11 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 
+@section('main')
 @section('title', 'Admin || Thêm mới news')
 
 @section('content_header')
     <div class="row">        
-        <h1>Thêm mới bài viết</h1>        
+        <h1>Thêm mới bài viết</h1>          
     </div>    
 
 @stop
@@ -21,9 +22,11 @@
 @endif
 
 <div class="row">    
-    <div class="col-md-4">
+
+    <div class="col-md-6 callout-top callout-top-danger pt-0">
     <form method="post" action="{{route('admin.news.add')}}" enctype="multipart/form-data" accept-charset="UTF-8">
             {{ csrf_field()}}     
+            <br>
             <div class="form-group">
             <label for="exampleInputEmail1">Danh mục bài viết:</label></br>
             <select name="danhmucbaiviet">
@@ -52,11 +55,4 @@
 
 @stop
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-    <script type="text/javascript" language="javascript" src="/ckeditor/ckeditor.js"></script>
 @stop

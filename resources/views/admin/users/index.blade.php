@@ -1,5 +1,5 @@
-@extends('adminlte::page')
-
+@extends('layouts.admin')
+@section('main')
 @section('title', 'Admin || Quản lý users')
 
 @section('content_header')
@@ -24,7 +24,8 @@
     </div>    
 </div>
 @endif
-<table class="table">
+<div class="callout-top callout-top-danger table-responsive">
+<table id="user" align="center" width="100%" class="text-center table table-hover table-striped table-bordered">
   <thead>
     <tr>
       <th scope="col">STT</th>
@@ -56,13 +57,6 @@
     @endforeach
   </tbody>
 </table>
+</div>
 @stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-    <script type="text/javascript" language="javascript" src="/ckeditor/ckeditor.js"></script>
 @stop
