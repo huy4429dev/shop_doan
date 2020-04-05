@@ -244,7 +244,7 @@ return [
                 ],
                 [
                     'text'    => 'Thống kê doanh thu',
-                    'url'     => '#',
+                    'url'     => 'admin/statistic',
                     'icon_color' => 'red',
                 ]
             ],
