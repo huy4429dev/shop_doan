@@ -19,11 +19,13 @@ Route::get('/', function () {
 
 /**
  * Admin page
- * 
+ *
  */
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', function(){ return view('home');});
+    Route::get('/', function () {
+        return view('home');
+    });
     Route::prefix('users')->group(function () {
         /**
          * Admin //  User
@@ -75,11 +77,20 @@ Route::prefix('admin')->group(function () {
         Route::post('/{id}/edit', 'Admin\Category\CategoryController@update')->name('admin.cat.update');
         Route::get('/{id}/delete', 'Admin\Category\CategoryController@delete')->name('admin.cat.delete');
     });
+
+    Route::prefix('statistic')->group(function () {
+        /**
+         * Thống kê
+         */
+        Route:: get('/', 'Admin\Statistic\StatisticController@index')->name('admin.statistic.index');
+        Route:: get('/char', 'Admin\Statistic\StatisticController@create')->name('admin.statistic.create');
+        Route:: get('/{id}/chi-tiet', 'Admin\Statistic\StatisticController@show')->name('admin.statistic.chi-tiet');
+    });
 });
 
 /**
  * Home page
- * 
+ *
  */
 Auth::routes();
 

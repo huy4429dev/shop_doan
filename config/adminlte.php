@@ -227,13 +227,6 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
             'text'    => 'Quản lý sản phẩm',
             'icon'    => 'fa fa-shopping-cart',
             'submenu' => [
@@ -244,7 +237,7 @@ return [
                 ],
                 [
                     'text'    => 'Thống kê doanh thu',
-                    'url'     => '#',
+                    'url'     => 'admin/statistic',
                     'icon_color' => 'red',
                 ]
             ],

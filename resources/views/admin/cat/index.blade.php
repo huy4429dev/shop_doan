@@ -28,7 +28,7 @@
         <table id="product" align="center" width="100%"
                class="text-center table table-hover table-striped table-bordered">
             <thead>
-            <tr>
+            <tr class="bg-danger">
                 <th>STT</th>
                 <th>Tên danh mục</th>
                 <th>

@@ -33,7 +33,7 @@
         <table id="product" align="center" width="100%"
                class="table table-hover table-striped table-bordered text-center">
             <thead>
-            <tr>
+            <tr class="bg-danger">
                 <th>
                     <a href="{{route('admin.product.create', $data->id)}}" class="btn btn-sm btn-success">Thêm</a>
                 </th>
